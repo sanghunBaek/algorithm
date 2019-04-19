@@ -33,7 +33,7 @@
 
 # 흠 ... 일단 2번째까지 만들어보자
 
-num = 6
+num = 3
 def makestar2(num):
     a = " "
     b = "*"
@@ -43,8 +43,45 @@ def makestar2(num):
     c.append(3*a*(num//3 - 1) +  5 * b +3*a*(num//3 - 1))
     return c
 
-d = makestar2(num)
-print(d)
-for i in d:
-    print(i)
+d = makestar2(3)
+# print(d)
+# for i in d:
+#     print(i)
+#
 
+f = makestar2(3)
+
+k = makestar2(6)
+
+# for i in k:
+#     print(i)
+# for i in range(len(d)):
+#     print(d[i] + " " + f[i])
+# sixstar = []
+
+for i in range(len(d)):
+    k.append(d[i] + " " + f[i])
+
+# for i in k:
+#     print(i)
+
+for i in range(12):
+    a = " "
+    if i < 6:
+        print(a * 6 + k[i])
+    else:
+        print(k[i-6] + a + k[i-6])
+
+def semistar():
+    return
+
+
+def finalstar(num):
+    a = " "
+    if i < num/2:
+        print(a * 6 + finalstar(num/2))
+    else:
+        print(finalstar(num/2) + a + finalstar(num/2))
+
+# 이런식으로 재귀함수로 문제를 풀어야할것 같다
+# 24를 구하라고하면 12 그리고 6 그리고 3에서 이제 제대로 시작할 수 있게끔
