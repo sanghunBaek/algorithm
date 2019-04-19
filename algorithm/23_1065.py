@@ -1,10 +1,19 @@
+import sys
 
+end_num = int(sys.stdin.readline().rstrip())
 
-# 한 숫자의 자리수 들이 등차수열을 이루는 한 수 인지 판별하는 함수를 만들것
-# n을 입력받으면 1~n까지 함수를 돌리고 개수를 계산하도록 만들것
+def check_hansu(end_num):
+    total = 0
+    for i in range(1, end_num+1):
+        if i < 10:
+            total = total + 1
+        elif i >= 10 and i < 100:
+            total = total + 1
+        elif i >= 100 and i < 1000:
+            b = [int(j) for j in str(i)]
+            if (b[1] - b[0]) == (b[2] - b[1]):
+                total = total + 1
 
-# 일단 숫자를 전부 배열로 바꿔주고
-# 그리고나서 이걸 계산을 for문을 통해서 할 수 있을듯
-#
-# 애초에 1자리 2자리수는 무조건 참일 수 밖에 없음
-# 3자리 이상부터 생각해주면된다.
+    return total
+
+print(check_hansu(end_num))
