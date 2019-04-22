@@ -1,87 +1,36 @@
-# print("{}".format("*"))
-# 포매팅은 아닌거 같다 느낌이
-# 문자를 더하기하는 방식으로 접근해 봐야겠다
+# 문자식을 변형하는방법으로 풀었는데 이 전략이 잘 맞아떨어졌다 ㅎㅎ
+# 중요한게 너무 어렵게 생각 않하는거랑 필요해 보이는거는 찾아보고 없으면 그냥 만들어서 써버리면 된다는것
+import sys
+number = int(sys.stdin.readline().rstrip())
 
-# print("  *  ")
-# print(" * * ")
-# print("*****")
-# a = "*"
-# b = " "
-# c = a + a + a + a
-# print(c)
-
-# 3을 받았다고 생각하고 만들어보자
-# for문을 돌리는게 애매하네 .. 규칙이 안보여서
+def checkjisu(num):
+    count = 0
+    for i in range(10):
+        if num % 2 == 0:
+            num = num // 2
+            count = count + 1
+    return count
 
 
-
-## 이건 그냥 위의 3개만 출력
-# num = 3
-# def makestar(num):
-#     a = " "
-#     b = "*"
-#     c = []
-#     c.append((num-1)*a + b + (num-1)*a)
-#     c.append(a + b + a +b + a)
-#     c.append(num//3 * 5 * b)
-#     return c
-#
-# d = makestar(3)
-# print(d)
-# for i in d:
-#     print(i)
-
-# 흠 ... 일단 2번째까지 만들어보자
-
-num = 3
-def makestar2(num):
-    a = " "
-    b = "*"
-    c = []
-    c.append((num-1)*a + b + (num-1)*a)
-    c.append(a*(num-2) + b + a + b + a*((num-2)))
-    c.append(3*a*(num//3 - 1) +  5 * b +3*a*(num//3 - 1))
-    return c
-
-d = makestar2(3)
-# print(d)
-# for i in d:
-#     print(i)
-#
-
-f = makestar2(3)
-
-k = makestar2(6)
-
-# for i in k:
-#     print(i)
-# for i in range(len(d)):
-#     print(d[i] + " " + f[i])
-# sixstar = []
-
-for i in range(len(d)):
-    k.append(d[i] + " " + f[i])
-
-# for i in k:
-#     print(i)
-
-for i in range(12):
-    a = " "
-    if i < 6:
-        print(a * 6 + k[i])
+def result_of_star(num):
+    k = ["  *  "," * * ", "*****"]
+    countnum  = checkjisu(num/3)
+    if num  == 3:
+        return k
     else:
-        print(k[i-6] + a + k[i-6])
+        for i in range(countnum):
+            a  = " "
+            # gup =  3 * i
+            for j in range(len(k)):
+                k.append(k[j] + a + k[j])
 
-def semistar():
-    return
+            for t in range(len(k)//2):
+                k[t] = a * (len(k)//2) + k[t] + a * (len(k)//2)
+        return k
 
 
-def finalstar(num):
-    a = " "
-    if i < num/2:
-        print(a * 6 + finalstar(num/2))
-    else:
-        print(finalstar(num/2) + a + finalstar(num/2))
+result = result_of_star(number)
+for i in range(len(result)):
+    print(result[i])
 
-# 이런식으로 재귀함수로 문제를 풀어야할것 같다
-# 24를 구하라고하면 12 그리고 6 그리고 3에서 이제 제대로 시작할 수 있게끔
+
