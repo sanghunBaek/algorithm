@@ -1,19 +1,23 @@
-a = "Mississipi"
-a = a.upper()
+# 증복을 제거하는 set 같은 집합은 순서가 없다. 그래도 for문으로 사용할 수 는 있다
+import sys
+a = sys.stdin.readline().rstrip().upper()
 result = []
 charlist = []
-b = set(a)
 
+b = set(a)
 for i in b:
     result.append(a.count(i))
     charlist.append(i)
 
-print(charlist)
-print(result)
+maxnum = max(result)
 
-for i in range(1,len(result)):
-    a = 0
-    count = 0
-    if result[i] > result[i-1]:
-        a = i
-        count = count + 1
+if result.count(maxnum) != 1:
+    print("?")
+else:
+    indexmax = result.index(maxnum)
+    print(charlist[indexmax])
+
+
+
+
+
