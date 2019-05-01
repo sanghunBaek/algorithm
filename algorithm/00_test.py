@@ -1,29 +1,34 @@
 
+# find의 두번째인수는 시작점 세번쨰인수는 끝점 (검색하는 범위를 지정하는거임 )
+# 문제 풀때 필요한기능이 내 상식선 + 검색결과 안나온다면 그냥 내가 직접 구현하는게 답일 수 있다. (생각보다 얼마 안걸림)
 
-inta = "2(3(hi)co)"
+inta = "2(3(hi)co)x2(ko)"
 counts = inta.count("(")
-calvalue = []
+
+def replace(start,end,text1,text2):
+    a = text1[:start]
+    b = text1[start:end+1]
+    c = text1[end+1:]
+    return a + text2 + c
+
+def findit(text):
+    for i in range(text.count("(")):
+        a = text.find(")")
+        b = []
+        j = 0
+        print(a)
+        for i in range(a):
+            if text.find("(", j,a) != -1:
+                b.append(text.find("(", j))
+                j = b[i] + 1
+        print(b)
+        c = b.pop()
+        sumt = text[c + 1:a] * int(text[c - 1])
+        text = replace(c - 1, a, text, sumt)
+        print(text)
 
 
-for i in range(counts*2):
-    if inta.find("(") < inta.find(")") and inta.find("(") != -1:
-        a = inta[ : inta.find("(")]
-        inta = inta[inta.find("(")+1 :]
-        calvalue.append(a)
-
-    else:
-        b = inta[ : inta.find(")")]
-        inta = inta[inta.find(")")+1 :]
-        calvalue.append(b)
-
-# a  = int(inta[indexa-1])
-# end = len(inta)
-# b  = inta[indexa+1:end-1]
-# print(a * b)
-
-
-
-
+findit(inta)
 
 
 
