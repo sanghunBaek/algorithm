@@ -1,34 +1,54 @@
+import sys
+
+N = int(input())
+
+dic = {}
+
+for i in range(N):
+    a = int(sys.stdin.readline())
+
+    if a in dic:
+        dic[a] = dic[a] + 1
+
+    else:
+        dic[a] = 1
+
+for sorted in sorted(dic.items()):
+    for i in range(sorted[1]):
+        print(sorted[0])
+
+
 
 # find의 두번째인수는 시작점 세번쨰인수는 끝점 (검색하는 범위를 지정하는거임 )
 # 문제 풀때 필요한기능이 내 상식선 + 검색결과 안나온다면 그냥 내가 직접 구현하는게 답일 수 있다. (생각보다 얼마 안걸림)
 
-inta = "2(3(hi)co)x2(ko)"
-counts = inta.count("(")
-
-def replace(start,end,text1,text2):
-    a = text1[:start]
-    b = text1[start:end+1]
-    c = text1[end+1:]
-    return a + text2 + c
-
-def findit(text):
-    for i in range(text.count("(")):
-        a = text.find(")")
-        b = []
-        j = 0
-        print(a)
-        for i in range(a):
-            if text.find("(", j,a) != -1:
-                b.append(text.find("(", j))
-                j = b[i] + 1
-        print(b)
-        c = b.pop()
-        sumt = text[c + 1:a] * int(text[c - 1])
-        text = replace(c - 1, a, text, sumt)
-        print(text)
-
-
-findit(inta)
+# inta = "2(3(hi)co)x2(ko)"
+# counts = inta.count("(")
+#
+# def replace(start,end,text1,text2):
+#     a = text1[:start]
+#     b = text1[start:end+1]
+#     c = text1[end+1:]
+#     return a + text2 + c
+#
+# def findit(text):
+#     for i in range(text.count("(")):
+#         a = text.find(")")
+#         b = []
+#         j = 0
+#         print(a)
+#         for i in range(a):
+#             if text.find("(", j,a) != -1:
+#                 b.append(text.find("(", j))
+#                 j = b[i] + 1
+#         print(b)
+#         c = b.pop()
+#         sumt = text[c + 1:a] * int(text[c - 1])
+#         text = replace(c - 1, a, text, sumt)
+#         print(text)
+#
+#
+# findit(inta)
 
 
 
