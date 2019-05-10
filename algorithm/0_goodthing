@@ -99,3 +99,8 @@ sort(key = len)을 해주면 된다 그리고 여러개의 조건을 주고싶�
 느낌이 보니까 lambda x : x 이런식으로할때 x가 그냥 그걸 통해서 정렬해라 이런느낌으로 보이네 원래 sort하면 그냥 오름차순 정렬되는것처럼 머를 기준으로 정렬할 건지 물어보는 느낌
 sort는 제자리 정렬로 메모리를 아낄때 쓰는거로 당사자를 바꿔줌 sorted는 사본을 만들어주는것 sorted(a, key = len) 이런식으로사용함 a가 바꾸려하는것
 참고 https://soooprmx.tistory.com/entry/%EB%A6%AC%EC%8A%A4%ED%8A%B8-%EC%A0%95%EB%A0%AC%ED%95%98%EB%8A%94-%EB%B0%A9%EB%B2%95
+
+
+#에라토스테네스의 채 소수를 가장 빠르게 판별해내는 알고리즘이라고한다
+배수들을 제거하는방식
+https://primes.utm.edu/glossary/page.php?sort=SieveOfEratosthenes
