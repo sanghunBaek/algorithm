@@ -104,3 +104,15 @@ sort는 제자리 정렬로 메모리를 아낄때 쓰는거로 당사자를 바
 #에라토스테네스의 채 소수를 가장 빠르게 판별해내는 알고리즘이라고한다
 배수들을 제거하는방식
 https://primes.utm.edu/glossary/page.php?sort=SieveOfEratosthenes
+
+
+#2차원 배열 만들기
+a = [[0]*3 for i in range(3)]
+b = [[0]*3]*3 이런식으로는 x 이게 각 상황이 같은게 복제되버림
+
+
+#소수 판별은
+n이라는 수가 있으면 전체를 볼 필요없이 n 제곱근 까지만
+나누어 지는 수가 없으면 소수인걸로 판별할 수 있다.
+
+#m,n=map(int,sys.stdin.readline().split()) 이렇게하면 m n 으로 바로 들어가게 할 수 있음

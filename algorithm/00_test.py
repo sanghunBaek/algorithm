@@ -1,21 +1,39 @@
-import sys
 
-N = int(input())
+a = [[0]*4 for i in range(4)]
+print(a)
+a[1-1][2-1] = 1
+a[2-1][1-1] = 2
+a[2-1][4-1] = 3
+a[3-1][2-1] = 4
+a[4-1][1-1] = 2
+a[4-1][3-1] = 5
 
-dic = {}
+#필터아닌듯
+def filter(num):
+    if num != 0:
+        return num
 
-for i in range(N):
-    a = int(sys.stdin.readline())
 
-    if a in dic:
-        dic[a] = dic[a] + 1
 
-    else:
-        dic[a] = 1
-
-for sorted in sorted(dic.items()):
-    for i in range(sorted[1]):
-        print(sorted[0])
+## 정렬문제중에 어려웠던거  문제풀때 dic를 활용해서 풀었던거
+# import sys
+#
+# N = int(input())
+#
+# dic = {}
+#
+# for i in range(N):
+#     a = int(sys.stdin.readline())
+#
+#     if a in dic:
+#         dic[a] = dic[a] + 1
+#
+#     else:
+#         dic[a] = 1
+#
+# for sorted in sorted(dic.items()):
+#     for i in range(sorted[1]):
+#         print(sorted[0])
 
 
 
