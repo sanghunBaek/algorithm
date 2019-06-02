@@ -116,3 +116,35 @@ n이라는 수가 있으면 전체를 볼 필요없이 n 제곱근 까지만
 나누어 지는 수가 없으면 소수인걸로 판별할 수 있다.
 
 #m,n=map(int,sys.stdin.readline().split()) 이렇게하면 m n 으로 바로 들어가게 할 수 있음
+
+#문제풀때 굳이 리스트만들어ㅊ서 깔끔하게 출력할 필요없었네 그냥 매번 출력하는 식으로 해도 정답으로 인정해줌
+
+#파이썬에서 Graph 는 아래 같이 원소와 연결된 원소들의 set 을 대응시킨 dictionary 자료형으로 표현
+아래와 같이 각 점에 연결된 부분이 저렇게 표현되는거
+graph = {'A': set(['B', 'C', 'E']),
+         'B': set(['A', 'D', 'F']),
+         'C': set(['A', 'G']),
+         'D': set(['B']),
+         'E': set(['A', 'F']),
+         'F': set(['B', 'E']),
+         'G': set(['G'])}
+
+
+
+# extend  리스트에 값 추가(다순하게 한개가아니라 리스트를 추가하는거)할때 set으로된거도 추가될 수 있음
+
+# 삼항연산자 a if test else b  조건참이면 a 아니면 b
+
+
+# for문말고 참신하게 출력하는방법
+g=''
+for s in efgh:
+    g+=str(s)+' '
+print(g.rstrip())
+
+
+#61_2667번 bfs 탐색에서 진짜 참고할만한 코드가 있음
+깔끔함 https://itholic.github.io/kata-danji/
+
+#한줄로 먼가 입력되고 그걸 배열에 넣어야한다면
+[list(sys.stdin.readline().rstrip())] 이렇게 할 수 있음 ..ㄷㄷ 존나깔끔

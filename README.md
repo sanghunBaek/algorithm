@@ -1,2 +1,2 @@
 # algorithm
-Practice algorithm 
+BaekJoon with python //Practice algorithm  
